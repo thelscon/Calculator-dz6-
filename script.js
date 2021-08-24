@@ -166,16 +166,20 @@ class ArrayMemory extends Array {
 
 //-------------------------------------------------------------------------------класс для массива-дисплея хода операций
 class ArrayProgress extends Array {
+
+    //--------------------создаем curent- и pre-поля, благодаря которым проще обращаться к текущему и предыдущим элементам
+    //---------------------------особеено при изменении текущего элемента значение на дисплее автоматически перерисовывается
+
     get first () { return this [ 0 ] ; }
+    get preCurrent () { return this [ this.length - 2 ] }
+    get prePreCurrent () { return this [ this.length - 3 ] }
 
     constructor ( value , table ) {
         super ( value ) ;
 
-        this.table = table ;
-        
+        this.table = table ;        
         this.table.textContent = value ;
         
-
         Object.defineProperties ( this , {
 
             'current' : {
@@ -184,15 +188,10 @@ class ArrayProgress extends Array {
                     this [ this.length - 1 ] = inputValue ;
                     this.table.textContent = this.join ( ' ' ) ;
                 }
-            } ,
-            'preCurrent' : {
-                get : function () { return this [ this.length - 2 ] }
-            } ,
-            'prePreCurrent' : {
-                get : function () { return this [ this.length - 3 ] }
             }
 
         } ) ;
+
     }
 
     //---------------------------создаем методы для работы с текущим объектом-массивом и автоматическим изменением значения на дисплее
