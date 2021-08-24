@@ -294,7 +294,7 @@ class Calculator {
     valueMemory = new ArrayMemory ( this.tableMemory.element , 'M:' , '0'  )
     arrayResult = [ '0' ]
 
-    //в конструкторе вешаем события на клики по элементам
+    //-----------------------------------------------------------------в конструкторе вешаем события на клики по элементам
     constructor () {
 
         this.wrapper.element.addEventListener ( 'click' , event => {
@@ -376,7 +376,7 @@ class Calculator {
 
     }
 
-    //пишем логику для всех кнопок
+    //---------------------------------------------------------------------------------------пишем логику для всех кнопок
     eventButtonNumber ( value ) {
 
         if (    this.arrayProgress.current.includes ( this.PERCENT ) 
