@@ -796,6 +796,10 @@ class Calculator {
             }
     
         }
+
+        //фиксим проблему округления, отбрасывая, значащие цифры > 16, опираясь на стандарт, и округляя дробную часть, удаляя лишние нули
+        //пример - 0.1 + 0.2
+        this.arrayResult [ 0 ] = String ( parseFloat ( parseFloat ( this.arrayResult ).toFixed ( 16 ) ) ) ;
     
         this.arrayProgress.rePush ( ...this.arrayResult ) ;
     
