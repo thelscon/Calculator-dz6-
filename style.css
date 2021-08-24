@@ -1,3 +1,15 @@
+@font-face {
+    font-family: 'Noto Sans Light';
+    src: url('./fonts/NotoSansLight/NotoSans-Light.eot');
+    src: url('./fonts/NotoSansLight/NotoSans-Light.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/NotoSansLight/NotoSans-Light.woff2') format('woff2'),
+        url('./fonts/NotoSansLight/NotoSans-Light.woff') format('woff'),
+        url('./fonts/NotoSansLight/NotoSans-Light.ttf') format('truetype'),
+        url('./fonts/NotoSansLight/NotoSans-Light.svg#NotoSans-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
