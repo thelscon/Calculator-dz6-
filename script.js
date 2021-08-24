@@ -446,6 +446,12 @@ class Calculator {
                 return ;
             }
 
+            if (    this.arrayProgress.preCurrent === '÷' 
+                    && this.arrayProgress.current.includes ( this.PERCENT )
+                    && String ( this.arrayProgress.current.slice (  0 , -1 ) === '0') ) {
+                return ;
+            }
+
             this.arrayProgress.rePush ( value ) ;
             return ;
         }
@@ -684,6 +690,12 @@ class Calculator {
                     ) {
                 return ;
         }
+
+        if ( this.arrayProgress.preCurrent === '÷' 
+                && this.arrayProgress.current.includes ( this.PERCENT )
+                && String ( this.arrayProgress.current.slice (  0 , -1 ) ) === '0' ) {
+            return ;
+        }
     
         if ( this.arrayProgress.current !== this.RESULT ) {   
 
@@ -797,7 +809,7 @@ class Calculator {
     
         }
 
-        //фиксим проблему округления, отбрасывая, значащие цифры > 16, опираясь на стандарт, и округляя дробную часть, удаляя лишние нули
+        //фиксим проблему округления, отбрасывая, значащие цифры > 16, опираясь на стандарт, и округляя дробную часть, удаляя лишние ноли
         //пример - 0.1 + 0.2
         this.arrayResult [ 0 ] = String ( parseFloat ( parseFloat ( this.arrayResult ).toFixed ( 16 ) ) ) ;
     
