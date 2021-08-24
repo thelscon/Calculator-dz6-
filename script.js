@@ -290,7 +290,7 @@ class Calculator {
     buttonPercent = new Element ( 'button' , Style.BUTTON_OPERATION , this.wrapper.element , '%' )
 
     arrayProgress = new ArrayProgress ( '0' , this.tableProgress.element )
-    valueMemory = new ArrayMemory ( this.tableMemory.element , 'M:' , '0'  )
+    valueMemory = new ArrayMemory ( this.tableMemory.element , 'M:' , '0' )
     arrayResult = [ '0' ]
 
     //-----------------------------------------------------------------в конструкторе вешаем события на клики по элементам
