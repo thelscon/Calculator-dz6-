@@ -379,7 +379,8 @@ class Calculator {
     eventButtonNumber ( value ) {
 
         if (    this.arrayProgress.current.includes ( this.PERCENT ) 
-                || this.arrayProgress.current.includes ( this.EXPONENTIATION ) ) {
+                || this.arrayProgress.current.includes ( this.EXPONENTIATION )
+                || this.arrayProgress.current === this.RESULT ) {
             return ;
         }
     
@@ -429,7 +430,8 @@ class Calculator {
 
     eventButtonOperation ( value ) {
 
-        if ( this.arrayProgress.current === '√' ) {
+        if (    this.arrayProgress.current === this.RESULT
+                || this.arrayProgress.current === '√' ) {
             return ;
         }
     
@@ -498,6 +500,10 @@ class Calculator {
 
     eventButtonExponentiation () {
 
+        if ( this.arrayProgress.current === this.RESULT ) {
+            return ;
+        }
+
         if (    this.TYPES_OF_OPERATION.includes ( this.arrayProgress.current )
                 || this.arrayProgress.current.includes ( this.SQUARE_ROOT ) 
                 || this.arrayProgress.current.includes ( this.PERCENT ) ) {
@@ -559,7 +565,8 @@ class Calculator {
 
     eventMemorySave () {
 
-        if ( this.arrayProgress.current === this.SQUARE_ROOT ) {
+        if (    this.arrayProgress.current === this.RESULT
+                || this.arrayProgress.current === this.SQUARE_ROOT ) {
             return ;
         }
     
@@ -598,7 +605,8 @@ class Calculator {
 
     eventMemoryPlus () {
 
-        if ( this.arrayProgress.current === this.SQUARE_ROOT ) {
+        if (    this.arrayProgress.current === this.RESULT
+                || this.arrayProgress.current === this.SQUARE_ROOT ) {
             return ;
         }
 
@@ -624,7 +632,8 @@ class Calculator {
 
     eventMemoryMinus () {
 
-        if ( this.arrayProgress.current === this.SQUARE_ROOT ) {
+        if (    this.arrayProgress.current === this.RESULT
+                || this.arrayProgress.current === this.SQUARE_ROOT ) {
             return ;
         }
 
