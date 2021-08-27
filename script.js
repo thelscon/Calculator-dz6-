@@ -168,7 +168,7 @@ class ArrayMemory extends Array {
 class ArrayProgress extends Array {
 
     //--------------------создаем curent- и pre-поля, благодаря которым проще обращаться к текущему и предыдущим элементам
-    //---------------------------особеено при изменении текущего элемента значение на дисплее автоматически перерисовывается
+    //---------------------------особено при изменении текущего элемента значение на дисплее автоматически перерисовывается
 
     get first () { return this [ 0 ] ; }
     get preCurrent () { return this [ this.length - 2 ] }
@@ -319,8 +319,7 @@ class Calculator {
                 case '8' : this.eventButtonNumber ( '8' ) ;
                 break ;
                 case '9' : this.eventButtonNumber ( '9' ) ;
-                break ;
-        
+                break ;        
                 case '.' : this.eventButtonDot ( '.' ) ;
                 break ;
         
@@ -333,39 +332,31 @@ class Calculator {
                 case '+' : this.eventButtonOperation ( '+' ) ;
                 break ;
         
-                case '%' :this. eventButtonPercent ( '%' ) ;
-                break ;
-        
+                case '%' :this. eventButtonPercent () ;
+                break ;        
                 case '√' : this.eventButtonSquareRoot () ;
-                break ;
-        
+                break ;        
                 case 'x²' : this.eventButtonExponentiation () ;
                 break ;
-        
+
                 case 'C' : this.eventButtonClear () ;
-                break ;
-        
+                break ;        
                 case 'X' : this.eventButtonDelete () ;
                 break ;
         
                 case 'MS' : this.eventMemorySave () ;
-                break ;
-        
+                break ;        
                 case 'MR' : this.eventMemoryRead () ;
-                break ;
-        
+                break ;        
                 case 'M+' : this.eventMemoryPlus () ;
-                break ;
-        
+                break ;        
                 case 'M-' : this.eventMemoryMinus () ;
-                break ;
-        
+                break ;        
                 case 'MC' : this.eventMemoryClear () ;
-                break ;
-        
+                break ;        
                 case 'MRC' : this.eventMemoryReadClear () ;
                 break ;
-        
+
                 case '=' : this.eventResult () ;
                 break ;
         
@@ -818,7 +809,7 @@ class Calculator {
     
         }
 
-        //фиксим проблему округления, отбрасывая, значащие цифры > 16, опираясь на стандарт, и округляя дробную часть, удаляя лишние ноли
+        //фиксим проблему округления, отбрасывая значащие цифры > 16, опираясь на стандарт, и округляя дробную часть, удаляя лишние ноли в результате
         //пример - 0.1 + 0.2
         this.arrayResult [ 0 ] = String ( parseFloat ( parseFloat ( this.arrayResult ).toFixed ( 16 ) ) ) ;
     
